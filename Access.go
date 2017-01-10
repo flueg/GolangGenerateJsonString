@@ -49,7 +49,6 @@ func (m *Access) Init(dbConf string) error {
 func _parseLine(line string) (string, error) {
 	separator := "    "
 	values := strings.Split(string(line), separator)
-
 	opt := NewOption(values[0], strings.Split(values[1], ";"))
 	if opt != nil {
 		result, err := opt.GetJsonString()
@@ -97,6 +96,7 @@ func (m *Access) Load() (rnt_err error) {
 		if len(line) == 0 || line[0] == '#' {
 			continue
 		}
+		fmt.Printf("ffff: [%s]\n", line)
 		myTicket, err := _parseLine(string(line))
 		if err != nil {
 			log.Errorf("Invalid ticket info found. [%s]", line)

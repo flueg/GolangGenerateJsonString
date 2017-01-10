@@ -15,11 +15,14 @@ func NewOption(t string, fields []string) IOption {
 		opt.A = fields[0]
 		opt.B = fields[1]
 		opt.C = fields[2]
-		opt.D = fields[3]
+		if len(fields) > 3 {
+			opt.D = fields[3]
+		}
 		return opt
 	case "2":
 		opt := NewOptionDiff()
-		opt.Img = fields[0]
+		opt.Img1 = fields[0]
+		opt.Img2 = fields[1]
 		return opt
 	case "3":
 		opt := NewOptionImage()

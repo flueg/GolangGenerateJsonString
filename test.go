@@ -36,7 +36,7 @@ func Test() {
 	}
 }
 
-func main() {
+func main1() {
 	//Test()
 	inFile := "questions"
 	access := NewAccess()
